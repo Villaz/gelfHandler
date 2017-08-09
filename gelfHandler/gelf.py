@@ -80,8 +80,8 @@ class GelfHandler(logging.Handler):
         msg_dict['version'] = '1.1'
         msg_dict['timestamp'] = record_dict['created']
         msg_dict['level'] = self.getLevelNo(record_dict['levelname'])
-        msg_dict['long_message'] = record_dict['msg']
-        msg_dict['short_message'] = record_dict['msg']
+        msg_dict['long_message'] = record_dict['message']
+        msg_dict['short_message'] = record_dict['message']
         msg_dict['host'] = self.from_host
         if self.application:
             msgDict['application'] = recordDict['application']
